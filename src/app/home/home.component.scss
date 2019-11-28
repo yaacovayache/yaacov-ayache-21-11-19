@@ -1,0 +1,104 @@
+.search {
+  position: relative;
+  text-align: center;
+  .weathersSearchResultField {
+    input {
+      margin: 20px 0;
+      border: 1px solid transparent;
+      background-color: #f1f1f1;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+  }
+  .weathersSearchResult {
+    position: absolute;
+    left: 0;
+    right: 0;
+    .weathersField {
+      font-size: 15px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-bottom: 1px solid #d4d4d4;
+      width: 200px;
+      text-align: left;
+      color: #777;
+      margin: auto;
+    }
+  }
+}
+
+.weather {
+  display: flex;
+  flex-flow: column wrap;
+  box-shadow: 0px 1px 10px 0px #cfcfcf;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.weather .current {
+  display: flex;
+  flex-flow: row wrap;
+  background-image: url("../../assets/images/cyclone.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  text-shadow: 1px 1px #F68D2E;
+  .favorite-icon span{
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
+
+.weather .current .info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  flex-grow: 2;
+}
+
+.weather .current .info .city {
+  font-size: 35px;
+}
+
+.weather .current .info .temp {
+  font-size: 56px;
+  margin: 25px 0;
+}
+
+.weather .current .info .wind {
+  font-size: 24px;
+}
+
+.weather .current .icon {
+  text-align: center;
+  font-size: 64px;
+  flex-grow: 1;
+}
+
+.weather .future {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.weather .future .day {
+  flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weather .future .day:hover {
+  color: #fff;
+  background-color: #F68D2E;
+}
+
+.weather .future .day h3 {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.weather .future .day p {
+  font-size: 20px;
+}

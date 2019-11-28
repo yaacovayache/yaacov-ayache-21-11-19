@@ -1,0 +1,8 @@
+<app-header></app-header>
+
+<div class="favoritesWeathers">
+  <div class="favoriteCity" *ngFor="let city of favoritesCities">{{city.LocalizedName}}
+    <div class="valueWeatherFavoriteCity" *ngIf="city.currentWeather">{{city.currentWeather.DailyForecasts[0].Temperature.Minimum.Value}} {{city.currentWeather.DailyForecasts[0].Temperature.Minimum.Unit}}</div>
+    <div class="phraseWeatherFavoriteCity">{{city.currentWeather.DailyForecasts[0].Day.IconPhrase}}</div>
+  </div>
+</div>

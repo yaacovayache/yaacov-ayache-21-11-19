@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="search">
+  <div class="weathersSearchResultField">
+    <input class="mr-sm-2" autocomplete="off"
+           (keyup)="getWeatherCitiesByKeyWord(searchKey)"
+           [(ngModel)]="searchKey" name="search" placeholder="Search" aria-label="Search" type="text">
+  </div>
+  <div class="weathersSearchResult">
+    <div (click)="setCurrentCity(city)" class="weathersField" *ngFor="let city of cities">
+      {{city['LocalizedName']}}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div style="width:100%">
+      <div class="weather">
+        <div class="current" *ngIf="currentWeather">
+          <div class="info">
+            <div>&nbsp;</div>
+            <div class="city" *ngIf="currentCity"><small><small>CITY:</small></small> {{currentCity.LocalizedName}}</div>
+            <div class="temp">{{currentWeather['DailyForecasts'][0].Temperature.Minimum.Value}}&deg;<small>{{currentWeather['DailyForecasts'][0].Temperature.Minimum.Unit}}</small></div>
+            <div class="wind"> {{currentWeather.DailyForecasts[0].Day.IconPhrase}}</div>
+            <div>&nbsp;</div>
+          </div>
+          <div class="icon">
+            <span class="icon-day">{{currentWeather['DailyForecasts'][0].Day.Icon}}</span>
+          </div>
+          <div class="favorite-icon">
+            <span class="glyphicon glyphicon-star-empty" *ngIf="!currentCity.isFavorite" (click)="setCurrentCityFavorite(true, currentCity)"></span>
+            <span class="glyphicon glyphicon-star" *ngIf="currentCity.isFavorite" (click)="setCurrentCityFavorite(false, currentCity)"></span>
+          </div>
+        </div>
+        <div class="future">
+          <div class="day" *ngFor="let day of currentWeather.days.DailyForecasts">
+            <h3>{{day.Date | date: 'EEE'}}</h3>
+            <p>{{day.Temperature.Minimum.Value}}{{day.Temperature.Minimum.Unit}} / {{day.Temperature.Maximum.Value}}{{day.Temperature.Maximum.Unit}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+.favoritesWeathers {
+  display: flex;
+  flex-wrap: wrap;
+  .favoriteCity {
+    border: solid 1px black;
+    font-size: 25px;
+    margin: 120px auto;
+    text-align: center;
+    padding: 10px;
+    background-image: url("../../assets/images/cyclone.jpg");
+    max-width: 200px;
+    min-width: 200px;
+    overflow: hidden;
+    height: 150px;
+    color: white;
+    border-radius: 20px;
+  }
+  .valueWeatherFavoriteCity{
+    margin: 20px;
+  }
+  .phraseWeatherFavoriteCity {
+
+  }
+}

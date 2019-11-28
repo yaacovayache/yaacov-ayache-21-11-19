@@ -1,0 +1,22 @@
+.navbarField {
+  height: 70px;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-between;
+  .logoName{
+    margin: 7px 20px 10px 20px;
+    .logoImg{
+      width: 150px;
+    }
+  }
+  .iconField{
+    display: flex;
+    margin: auto 0;
+    .homeIcon {
+      padding-right: 10px;
+    }
+    .favoriteIcon {
+      padding-right: 10px;
+    }
+  }
+}
