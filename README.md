@@ -1,6 +1,6 @@
 # Weather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+Run npm i for install modules
 
 ## Development server
 
