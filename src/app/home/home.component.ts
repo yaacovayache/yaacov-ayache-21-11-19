@@ -43,7 +43,6 @@ export class HomeComponent implements OnInit {
   public setCurrentCity(city) {
     this.citiesStorage.forEach(filteredCity => {
       if (filteredCity.Key === city.Key) {
-        console.log('enter');
         city.isFavorite = filteredCity.isFavorite;
       }
     });
@@ -53,6 +52,7 @@ export class HomeComponent implements OnInit {
         this.currentWeather.days = currentWeatherDays;
       });
     this.cities = [];
+    this.searchKey = '';
   }
 
   public setCurrentCityFavorite(state, city) {
